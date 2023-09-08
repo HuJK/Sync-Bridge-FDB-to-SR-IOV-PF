@@ -1,5 +1,5 @@
 #!/bin/bash
-
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 USAGE="Usage: $0 [write|restore] bridge_name parent_interface"
 
 if [ "$#" -ne "3" ]; then
