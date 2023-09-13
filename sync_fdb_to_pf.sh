@@ -1,6 +1,6 @@
 #!/bin/bash
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-USAGE="Usage: $0 [write|restore] bridge_name parent_interface"
+USAGE="Usage: $0 [write|clear] bridge_name parent_interface"
 
 if [ "$#" -ne "3" ]; then
   echo "$USAGE"
@@ -13,7 +13,7 @@ fi
 
 action=$1
 case "${action}" in
-  write|restore) : ;;
+  write|clear) : ;;
   *)                                       echo "got unknown action ${action}"; exit 1 ;;
 esac
 
@@ -86,7 +86,7 @@ function sync_to_fdb {
     done
 }
 
-function restore_fdb {
+function clear_fdb {
     for src_macpool_addr in "${src_macpool[@]}"; do
         echo "bridge fdb del $src_macpool_addr dev $parent_interface"
         bridge fdb del $src_macpool_addr dev $parent_interface
@@ -97,8 +97,8 @@ case "${action}" in
   write) 
     sync_to_fdb
     ;;
-  restore)
-    restore_fdb
+  clear)
+    clear_fdb
     ;;
 esac
 
