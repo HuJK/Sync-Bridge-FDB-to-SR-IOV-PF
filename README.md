@@ -1,8 +1,12 @@
 ## Script
-This script make VMs under pf bridges be able to communicate with VMs that under VFs in SR-IOV
+This script make VMs under pf bridges be able to communicate with VMs that under VFs in SR-IOV, which allows VM1~VM6 to communicate each other in this diagram  
+![image](https://github.com/HuJK/Sync-Bridge-FDB-to-SR-IOV-PF/assets/15907444/8ed16e8e-a2de-4955-a55e-494ce0ee0325)
+
 
 It will read mac address learned from bridge and sync to the FDB table.
+
 Run this script periodically.
+
 Inspired by https://github.com/jdlayman/pve-hookscript-sriov
 
 ## Usage
