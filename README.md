@@ -12,7 +12,7 @@ Inspired by https://github.com/jdlayman/pve-hookscript-sriov
 ## Usage
 
 ```
-Usage: ./sync_mac_to_br.sh [write|clear] $bridge_name $parent_interface
+Usage: ./sync_mac_to_br.sh [write|restore] $bridge_name $parent_interface
 ```
 
 ### Sync every 10 seconds
